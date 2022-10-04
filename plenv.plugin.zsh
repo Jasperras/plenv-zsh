@@ -12,9 +12,9 @@ _zsh_plenv_load() {
     eval "$(plenv init -)"
 }
 
-if [[ -f "${PLENV_HOME}" ]]; then
-    _zsh_plenv_load
-else
-    _zsh_plenv_install
-fi
+# First check if installed, if not, install.
+[[ ! -d "${PLENV_HOME}" ]] && _zsh_plenv_install
+
+# Then always check again to load, otherwise it may not load upon first install.
+[[ -d "${PLENV_HOME}" ]] && _zsh_plenv_load
 
