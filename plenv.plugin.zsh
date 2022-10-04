@@ -4,7 +4,7 @@ GITHUB="https://github.com"
 
 _zsh_plenv_install() {
     echo "Installing plenv..."
-    git clone "${GITHUB}/tokuhirom/plenv.git ${PLENV_HOME}"
+    git clone "${GITHUB}/tokuhirom/plenv.git" "${PLENV_HOME}"
 }
 
 _zsh_plenv_load() {
